@@ -1,0 +1,372 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Chenhui Jin | Personal Website</title>
+  <meta name="description" content="Chenhui Jin's personal website.">
+  <style>:root {
+  --ink: #152e3d;
+  --accent: #006e78;
+  --muted: #4c6572;
+  --paper: #fafcfb;
+  --line: #d9e5e5;
+}
+.highlight-image {
+  display: block;
+  width: 70%;
+  height: auto;
+  border-radius: 4px;
+  margin: 0 auto 1rem;
+}
+.photo-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
+  gap: 1.5rem;
+  margin: 1.5rem 0;
+}
+.photo-gallery figure { margin: 0; }
+.photo-gallery img { display: block; width: 100%; height: auto; border-radius: 4px; }
+.photo-gallery figcaption { margin-top: .6rem; color: var(--muted); font-size: .95rem; }
+.news-list {
+  max-height: 280px;
+  overflow-y: auto;
+  padding-right: 1rem;
+}
+.news-item {
+  display: grid;
+  grid-template-columns: 130px 1fr;
+  gap: 1.5rem;
+  padding: 1rem 0;
+  border-bottom: 1px solid var(--line);
+}
+.news-item time {
+  color: var(--accent);
+  font-weight: 600;
+}
+.news-item p {
+  margin: 0;
+}
+@media (max-width: 600px) {
+  .news-item {
+    grid-template-columns: 1fr;
+    gap: 0.3rem;
+  }
+}
+body { background: var(--paper); color: var(--ink); font-size: 1.05rem; line-height: 1.75; }
+a { color: var(--accent); text-underline-offset: .18em; }
+a:hover { color: #00454c; }
+h1, h2, h3 { color: var(--ink); font-weight: 650; letter-spacing: -.025em; }
+h2 { margin-top: 2.5rem; border-bottom-color: var(--line); }
+.navbar { border-bottom: 1px solid var(--line); padding-block: 1rem; }
+.navbar-brand { font-weight: 700; letter-spacing: -.02em; }
+.navbar .nav-link { font-size: .96rem; }
+.home-hero { padding: 3.8rem 0 3rem; border-bottom: 1px solid var(--line); }
+.eyebrow { color: var(--accent); font-size: .78rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; }
+.hero-title { max-width: 850px; margin: 1rem 0 1.4rem; font-size: clamp(2.4rem, 5.5vw, 4.25rem); line-height: 1.08; letter-spacing: -.045em; }
+.hero-intro { color: var(--muted); max-width: 720px; font-size: 1.15rem; margin-bottom: 1.7rem; }
+.btn { border-radius: 4px; padding: .7rem 1.1rem; font-size: .95rem; margin: 0 .4rem .6rem 0; }
+.btn-primary { background: var(--accent); border-color: var(--accent); }
+.btn-primary:hover { background: #004d55; border-color: #004d55; }
+.btn-outline-primary { color: var(--accent); border-color: var(--accent); }
+.btn-outline-primary:hover { background: var(--accent); border-color: var(--accent); }
+.research-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.3rem; margin: 1.7rem 0 2rem; }
+.research-card { padding: 1.5rem; background: white; border: 1px solid var(--line); border-top: 3px solid var(--accent); border-radius: 4px; }
+.research-card h3 { font-size: 1.056rem; line-height: 1.3; margin-top: .9rem; }
+.research-card p { color: var(--muted); font-size: .97rem; }
+.research-card a { font-weight: 600; }
+.figure-placeholder { margin: 1.5rem 0 2.5rem; padding: 2.8rem 1.5rem; background: #edf4f3; border: 1px dashed #7c999e; color: #425e68; text-align: center; border-radius: 4px; }
+.figure-placeholder p { margin: 0; }
+.nav-footer { border-top: 1px solid var(--line); margin-top: 2rem; color: var(--muted); }
+a:focus-visible, button:focus-visible { outline: 3px solid #bd7200; outline-offset: 4px; }
+@media (max-width: 900px) { .research-grid { grid-template-columns: 1fr; } .home-hero { padding-top: 2rem; } }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto !important; } }
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 6rem; }
+body { margin: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+main, .nav-inner, .footer-inner { max-width: 1160px; margin: auto; padding-left: 1.5rem; padding-right: 1.5rem; }
+nav { background: var(--paper); border-bottom: 1px solid var(--line); }
+.nav-inner { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: .7rem; padding-top: 1rem; padding-bottom: 1rem; }
+.brand { font-size: 1.35rem; font-weight: 700; color: var(--ink); text-decoration: none; }
+.nav-links { display: flex; flex-wrap: wrap; gap: 1.3rem; }
+.nav-links a { color: var(--muted); text-decoration: none; font-size: .95rem; }
+.nav-links a:hover { color: var(--accent); text-decoration: underline; }
+h1 { margin-top: 0; }
+h2 { font-size: 1.8rem; padding-bottom: .6rem; border-bottom: 1px solid var(--line); }
+.btn { display: inline-block; text-decoration: none; border: 1px solid var(--accent); }
+.btn-primary { color: white; }
+.btn-primary:hover, .btn-outline-primary:hover { color: white; }
+.section-copy { none; }
+.pending { color: var(--muted); font-style: italic; }
+footer { margin-top: 4rem; padding: 1.7rem 0; border-top: 1px solid var(--line); color: var(--muted); font-size: .9rem; }
+.skip-link { position: absolute; left: -10000px; }
+.skip-link:focus { position: static; display: block; padding: .5rem; }
+@media(max-width: 600px) { .nav-links { gap: .8rem; } .hero-title { font-size: 2.6rem; } }
+</style>
+</head>
+<body>
+<!-- EDITING: This single file contains your whole website.
+     Change visible text below, save, and upload the updated index.html to GitHub.
+     Replace the publication/contact notes with real details before sharing widely.
+     For a figure, upload a file named cyclone.png next to this HTML and insert:
+     <img src="cyclone.png" alt="Describe the main message of the figure" style="max-width:100%;height:auto">
+     For your CV, upload CV.pdf and insert: <a href="CV.pdf">Download my CV</a>
+-->
+<a class="skip-link" href="#main">Skip to content</a>
+<nav aria-label="Main navigation"><div class="nav-inner">
+  <a class="brand" href="#home">Chenhui</a>
+  <div class="nav-links">
+    <a href="#research">Research</a>
+    <a href="#publications">Publications</a>
+    <a href="#about">About</a>
+    <a href="#beyond-research">Beyond Research</a>
+    <a href="#contact">Contact</a>
+  </div>
+</div></nav>
+<main id="main"><div id="home"><div class="home-hero">
+<div class="eyebrow">
+<p>Dynamics of midlatitude weather systems · Extratropical-tropical weather system interactions</p>
+</div>
+<h1 class="hero-title"
+id="understanding-weather-systems">Understanding weather systems</h1>
+<div class="hero-intro">
+<p>Hi, I'm Chenhui Jin, a postdoctoral researcher studying the dynamics of midlatitude weather systems and the interactions between extratropical-tropical weather systems.</p>
+</div>
+<p><a href="#research" class="btn btn-primary">Explore my research</a>
+<a href="#publications"
+class="btn btn-outline-primary">Publications</a></p>
+</div>
+
+
+<section id="news" aria-labelledby="news-title">
+  <h2 id="news-title">Latest news</h2>
+
+  <div class="news-list" tabindex="0"
+       role="region" aria-label="Research news">
+
+
+
+  <article class="news-item">
+    <time datetime="2026-05">May 2026</time>
+    <p>
+      Attended EGU General Assembly 2026, Vienna, Austria
+      <br>
+      <a href="EGU26-2900-poster.pdf"
+        target="_blank"
+        rel="noopener noreferrer">
+        View poster (PDF) →
+      </a>
+    </p>
+  </article>
+
+  <article class="news-item">
+    <time datetime="2026-05">May 2026</time>
+    <p>
+      Attended Diabatics 2026 Workshop, Wolkersdorf, Austria
+      <br>
+      <a href="Diabatic2026-presentation.pdf"
+        target="_blank"
+        rel="noopener noreferrer">
+        View presentation slides (PDF) →
+      </a>
+    </p>
+  </article>
+
+    <!-- Add more news items here, newest first. -->
+
+  </div>
+</section>
+
+
+<!-- Research highlights: each research-card below contains a label, image, title, and description. -->
+<h2 id="research">Research highlights</h2>
+<div class="research-grid">
+<!-- Highlight 01: Cyclone phase transitions -->
+<div class="research-card">
+<div class="eyebrow">  
+
+<p>01 · Cyclone phase transitions</p>
+</div>
+<img
+  src="wcd-2026-f10.png"
+  alt="Metrics"
+  class="highlight-image"
+>
+<h3 id="transition">From tropical to extratropical cyclones</h3>
+<p>Explore how tropical cyclones transition into extratropical cyclones, and how the transitions affect the downstream weather</p>
+</div>
+<!-- End highlight 01 -->
+
+<!-- Highlight 02: Explosive cyclogenesis -->
+<div class="research-card">
+<div class="eyebrow">
+
+
+<p>02 · Explosive cyclogenesis</p>
+</div>
+<img
+  src="ec_sep_2016.png"
+  alt="Satellite image of a cyclone over southern Australia"
+  class="highlight-image"
+>
+<h3 id="explosive">How extratropical cyclones develop explosively?</h3>
+<p>Investigating the mechanisms behind explosive cyclogenesis in the Australian region</p>
+</div>
+<!-- End highlight 02 -->
+
+<!-- Highlight 03: Diabatic processes -->
+<div class="research-card">
+<div class="eyebrow">
+<p>03 · Diabatic processes</p>
+</div>
+<img
+  src="diab.png"
+  alt="Sensitivity of cyclone deepening to latent heating"
+  class="highlight-image"
+>
+<h3 id="heating">Sensitivity of cyclone deepening to latent heating</h3>
+<p>Combining model experiments with novel diagnostics to
+examine how diabatic processes affect extratropical cyclone development</p>
+</div>
+<!-- End highlight 03 -->
+</div>
+<!-- End research highlights -->
+</div>
+
+<section id="publications" class="section-copy" aria-labelledby="publications-title">
+  <h2 id="publications-title">Publications</h2>
+
+  <h3>Published</h3>
+    <p>
+      Richards, L. S., Huang, Y., Barnes, M. A.,
+      <strong>Jin, C.</strong>, Muhammad, F. R., Harrison, D. P.,
+      and Siems, S. T. (2026).
+      The development and persistence of doldrums over the Great Barrier Reef.
+      <em>Weather and Climate Dynamics</em>, 7, 1977–1993.
+      <a href="https://doi.org/10.5194/wcd-7-1977-2026"
+        target="_blank"
+        rel="noopener noreferrer">
+        https://doi.org/10.5194/wcd-7-1977-2026
+      </a>
+    </p>
+
+    <p>
+    <strong>Jin, C.</strong>, Ritchie, E. A., and Holbrook, N. J. (2026).
+    Synoptic climatology of extratropical transition of tropical cyclones
+    over the Southern Hemisphere.
+    <em>Weather and Climate Dynamics</em>, 7, 1285–1306.
+    <a href="https://doi.org/10.5194/wcd-7-1285-2026"
+      target="_blank"
+      rel="noopener noreferrer">
+      https://doi.org/10.5194/wcd-7-1285-2026
+    </a>
+    </p>
+
+    <p>
+    <strong>Jin, C.</strong>, Gallant, A.J.E., Parker, T., and Reeder, M.J. (2025).
+    Weather systems and their contribution to seasonal rainfall in Australia.
+    <em>Quarterly Journal of the Royal Meteorological Society</em>, 151(771), e5013.
+    <a href="https://doi.org/10.1002/qj.5013"
+      target="_blank"
+      rel="noopener noreferrer">
+      https://doi.org/10.1002/qj.5013
+    </a>
+    </p>
+  
+    <p>
+    <strong>Jin, C.</strong>, Reeder, M. J., Gallant, A. J. E., Parker, T., and Sprenger, M. (2024).
+    A Synoptic‐Dynamic View of the Millennium Drought (2001–2009) in Southeastern Australia.
+    <em>Journal of Geophysical Research: Atmospheres</em>, 129(22), e2024JD041657.
+    <a href="https://doi.org/10.1029/2024JD041657"
+      target="_blank"
+      rel="noopener noreferrer">
+      https://doi.org/10.1029/2024JD041657
+    </a>
+    </p>
+
+    <p>
+    <strong>Jin, C.</strong>, Reeder, M. J., Gallant, A. J. E., Parker, T., and Sprenger, M. (2024).
+    Changes in Weather Systems during Anomalously Wet and Dry Years in Southeastern Australia.
+    <em>Journal of Climate</em>, 37(4), 1131–1153.
+    <a href="https://doi.org/10.1175/JCLI-D-23-0305.1"
+      target="_blank"
+      rel="noopener noreferrer">
+      https://doi.org/10.1175/JCLI-D-23-0305.1
+    </a>
+    </p>
+
+  <h3>Submitted manuscript</h3>
+    <p>
+    <strong>Jin, C.</strong>, Ritchie, E. A., Barnes, M. A., and Holbrook, N. J. (2026).
+    Downstream development of extratropical transition of tropical cyclones over the Southern Hemisphere.
+    <em>EGUsphere [preprint]</em>,
+    <a href="https://doi.org/10.5194/egusphere-2026-5018"
+      target="_blank"
+      rel="noopener noreferrer">
+      https://doi.org/10.5194/egusphere-2026-5018
+    </a>
+    </p>
+
+    <p>
+    Kuhn, A., <strong>Jin, C.</strong>, Ritchie, E., and Sprenger, M. A. (2026).
+    Winter Jet Stream Clustering over Australia and its Role in Extreme Precipitation Events.
+    <em>EGUsphere</em> [preprint],
+    <a href="https://doi.org/10.5194/egusphere-2026-4836"
+      target="_blank"
+      rel="noopener noreferrer">
+      https://doi.org/10.5194/egusphere-2026-4836
+    </a>
+    </p>
+
+</section>
+
+<section id="supervision" aria-labelledby="supervision-title">
+  <h2 id="supervision-title">Supervision</h2>
+  <p>
+    <strong>Anna Kuhn (ETH Zurich)</strong> · MSc · Variability of the Wintertime Jet Stream over Australia and its Role in Extreme Precipitation Events · completed at 2026
+  </p>
+</section>
+
+
+<section id="about" class="section-copy" aria-labelledby="about-title">
+  <h2 id="about-title">About me</h2>
+  <p>I'm Chenhui Jin, a postdoctoral researcher studying the dynamics of weather systems. I am interested in extratropical cyclones, tropical–extratropical interactions, and the role of diabatic processes in cyclone development. I combine atmospheric modelling and diagnostics to understand how these systems shape rainfall and extreme weather, particularly in Australia and the Southern Hemisphere.</p>
+</section>
+<!-- Beyond Research: add photos and captions inside the photo-gallery below. -->
+<section id="beyond-research" aria-labelledby="beyond-research-title">
+  <h2 id="beyond-research-title">Beyond Research</h2>
+  <p>A few moments from travels, conferences, and life beyond research.</p>
+  <div class="photo-gallery">
+    <figure>
+      <img src="diabatic2026.png" alt="Photo from the Diabatics 2026 Workshop in Wolkersdorf, Austria" loading="lazy">
+      <figcaption>Diabatics 2026 Workshop · Wolkersdorf, Austria · May 2026</figcaption>
+    </figure>
+    <figure>
+      <img src="clex2023.jpg" alt="Photo from the CLEX annual workshop in Brisbane, Australia, November 2023" loading="lazy">
+      <figcaption>CLEX annual workshop · Brisbane, Australia · November 2023</figcaption>
+    </figure>
+    <!-- To add a photo, place the image file next to index.html, copy the figure
+         below outside this comment, and update the filename, alt text, and caption.
+    <figure>
+      <img src="your-photo.jpg" alt="Describe what is in the photo" loading="lazy">
+      <figcaption>Your caption · Location · Date</figcaption>
+    </figure>
+    -->
+  </div>
+</section>
+<!-- End Beyond Research -->
+
+<section id="contact" class="section-copy" aria-labelledby="contact-title">
+  <h2 id="contact-title">Contact</h2>
+  <p>Email: <a href="mailto:chenhui.jin@monash.edu">chenhui.jin@monash.edu</a></p>
+  <!-- Replace the note above, for example:
+  <p><a href="mailto:chenhui.jin@monash.edu">Email</a> ·
+  <a href="YOUR-SCHOLAR-URL">Google Scholar</a> ·
+  <a href="https://orcid.org/YOUR-ORCID">ORCID</a></p>
+  -->
+</section>
+</main>
+<footer><div class="footer-inner">Chenhui · Atmospheric science</div></footer>
+</body>
+</html>
